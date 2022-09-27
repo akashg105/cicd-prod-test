@@ -1,0 +1,24 @@
+{
+  "name" : "cicd-prod-github-visual-1",
+  "role" : "Admin",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-assets-590186200215-us-east-2/scripts/cicd-prod-github-visual-1",
+    "pythonVersion" : "2"
+  },
+  "maxRetries" : 2,
+  "allocatedCapacity" : 10,
+  "timeout" : 2880,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "3.0",
+  "codeGenConfigurationNodes" : "{\"node-1\":{\"S3JsonSource\":{\"AdditionalOptions\":{\"EnableSamplePath\":false},\"Exclusions\":[],\"Name\":\"myJson\",\"Paths\":[\"s3://kguptn-iad-test\"]}}}",
+  "sourceControlDetails" : {
+    "provider" : "AWS_CODE_COMMIT",
+    "repository" : "cicd-prod-test",
+    "branch" : "main",
+    "folder" : "cicd-prod-github-visual-1"
+  }
+}
